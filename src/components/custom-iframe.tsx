@@ -1,3 +1,4 @@
+'use client';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
 import React, { FC, useState } from 'react';
@@ -13,15 +14,19 @@ const CustomIframeContext = React.createContext<ContextType | undefined>(
   undefined,
 );
 
+type CustomIframeProps = React.HtmlHTMLAttributes<HTMLDivElement> &
+  Pick<React.HTMLAttributes<HTMLIFrameElement>, 'onLoad' | 'onError'> & {
+    useInViewOptions?: IntersectionOptions;
+  };
+
 const CustomIframe = ({
   children,
   onError,
   onLoad,
   useInViewOptions,
-}: {
-  children: React.ReactNode;
-  useInViewOptions?: IntersectionOptions;
-} & Pick<React.HTMLAttributes<HTMLIFrameElement>, 'onLoad' | 'onError'>) => {
+  className,
+  ...props
+}: CustomIframeProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -39,7 +44,11 @@ const CustomIframe = ({
         inView,
       }}
     >
-      <div ref={ref} className="relative h-[300px] w-full">
+      <div
+        ref={ref}
+        className={cn('relative h-[300px] w-full', className)}
+        {...props}
+      >
         {children}
       </div>
     </CustomIframeContext.Provider>
@@ -56,10 +65,15 @@ const useCustomIframe = () => {
   return context;
 };
 
-export const CustomIframePlaceholder = () => {
+export const CustomIframePlaceholder: FC<
+  React.ComponentProps<typeof Skeleton>
+> = ({ className, ...props }) => {
   const { isLoaded } = useCustomIframe();
   return isLoaded ? null : (
-    <Skeleton className="absolute left-0 top-0 h-full w-full" />
+    <Skeleton
+      className={cn('absolute left-0 top-0 h-full w-full', className)}
+      {...props}
+    />
   );
 };
 
@@ -68,17 +82,20 @@ export const CustomIframeContent: FC<React.HTMLProps<HTMLIFrameElement>> = ({
   ...props
 }) => {
   const { isLoaded, setIsLoaded, onError, onLoad, inView } = useCustomIframe();
+
+  const handleOnLoad = (e: React.SyntheticEvent<HTMLIFrameElement, Event>) => {
+    setIsLoaded(true);
+
+    if (onLoad) {
+      onLoad(e);
+    }
+  };
+
   return inView ? (
     <iframe
       {...props}
       loading="lazy"
-      onLoad={(e) => {
-        setIsLoaded(true);
-
-        if (onLoad) {
-          onLoad(e);
-        }
-      }}
+      onLoad={handleOnLoad}
       onError={onError}
       className={cn(
         'absolute left-0 top-0 h-full w-full duration-1000',
