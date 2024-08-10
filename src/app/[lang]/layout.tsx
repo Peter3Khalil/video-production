@@ -40,9 +40,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-      <body
-        className={`min-h-svh w-full bg-background text-foreground antialiased`}
-      >
+      <body className="dark min-h-svh bg-background text-foreground antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
