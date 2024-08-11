@@ -12,6 +12,14 @@ import {
 import React, { FC } from 'react';
 
 const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
+  const projects = [
+    'https://player.vimeo.com/video/997477629?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/997477608?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/997477562?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/997476805?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/995964427?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+  ];
+
   return (
     <Section {...props}>
       <SectionHeader>
@@ -23,7 +31,7 @@ const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         </SectionDescription>
       </SectionHeader>
       <SectionContent className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {Array.from({ length: 8 }).map((_, index) => (
+        {projects.map((project, index) => (
           <CustomIframe
             key={index}
             className="h-[250px] w-full rounded-[inherit]"
@@ -32,7 +40,7 @@ const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
             <CustomIframeContent
               className="rounded-[inherit]"
               allowFullScreen
-              src="https://player.vimeo.com/video/997116246?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              src={project}
             />
           </CustomIframe>
         ))}
