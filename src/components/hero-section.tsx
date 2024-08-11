@@ -9,9 +9,9 @@ import React, { FC } from 'react';
 
 const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   return (
-    <Section {...props}>
+    <Section {...props} className="px-12">
       <SectionHeader>
-        <h1 className="text-5xl font-bold leading-none md:text-nowrap">
+        <h1 className="text-3xl font-bold leading-none md:text-nowrap md:text-5xl">
           Inspire - Initiate - Dream
         </h1>
         <SectionDescription>

@@ -1,17 +1,10 @@
 import { GlobeIcon, MenuIcon } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn, getDirection } from '@/lib/utils';
+import { headers } from 'next/headers';
 import Link from 'next/link';
 import React, { FC } from 'react';
-import { headers } from 'next/headers';
 
 const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
   className,
@@ -21,6 +14,15 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
   const currentUrl = headersList.get('x-url') || '';
   const url = new URL(currentUrl);
   const lang = url.pathname.split('/')[1];
+
+  const sections = [
+    'home',
+    'vision',
+    'about',
+    'why Choose Us',
+    'services',
+    'contact',
+  ];
 
   return (
     <header
@@ -41,12 +43,12 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
               Logo
             </Link>
             <ul className="flex items-center gap-4">
-              {[1, 2, 3, 4].map((item) => (
+              {sections.map((section) => (
                 <li
-                  key={item}
-                  className="text-sm text-muted-foreground duration-300 hover:text-foreground"
+                  key={section}
+                  className="text-sm capitalize text-muted-foreground duration-300 hover:text-foreground"
                 >
-                  <Link href={`/page-${item}`}>Page {item}</Link>
+                  <Link href={`#${section}`}>{section}</Link>
                 </li>
               ))}
             </ul>
@@ -81,13 +83,17 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
               <SheetContent
                 side={getDirection(lang) === 'rtl' ? 'right' : 'left'}
               >
-                <SheetHeader>
-                  <SheetTitle>Are you absolutely sure?</SheetTitle>
-                  <SheetDescription>
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
-                  </SheetDescription>
-                </SheetHeader>
+                <nav className="mt-10">
+                  <ul className="flex flex-col gap-4">
+                    {sections.map((section) => (
+                      <Link href={`#${section}`} key={section}>
+                        <li className="rounded-lg px-4 py-1 text-md capitalize text-muted-foreground duration-300 hover:bg-accent hover:text-foreground">
+                          {section}
+                        </li>
+                      </Link>
+                    ))}
+                  </ul>
+                </nav>
               </SheetContent>
             </Sheet>
           </div>

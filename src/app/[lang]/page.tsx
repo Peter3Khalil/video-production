@@ -1,4 +1,5 @@
 import AboutUsSection from '@/components/about-us-section';
+import Contact from '@/components/contact';
 import Header from '@/components/header';
 import HeroSection from '@/components/hero-section';
 import ProjectsSection from '@/components/projects-section';
@@ -8,17 +9,44 @@ import VisionSection from '@/components/vision-section';
 import WhyUsSection from '@/components/why-us-section';
 
 const Home = () => {
+  const sections = [
+    {
+      component: HeroSection,
+      id: 'home',
+    },
+    {
+      component: ProjectsSection,
+      id: 'projects',
+    },
+    {
+      component: VisionSection,
+      id: 'vision',
+    },
+    {
+      component: AboutUsSection,
+      id: 'about',
+    },
+    {
+      component: WhyUsSection,
+      id: 'why Choose Us',
+    },
+    {
+      component: ServicesSection,
+      id: 'services',
+    },
+    {
+      component: Contact,
+      id: 'contact',
+    },
+  ];
   return (
     <main className="pt-16">
       <SplashScreen />
       <Header />
       <div className="divide-y-[1px] divide-muted">
-        <HeroSection />
-        <ProjectsSection id="projects" />
-        <VisionSection />
-        <AboutUsSection />
-        <WhyUsSection />
-        <ServicesSection />
+        {sections.map(({ component: Section, id }) => (
+          <Section key={id} id={id} />
+        ))}
       </div>
     </main>
   );
