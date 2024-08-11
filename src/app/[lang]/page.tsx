@@ -28,7 +28,7 @@ const Home = () => {
     },
     {
       component: WhyUsSection,
-      id: 'why Choose Us',
+      id: 'why_choose_us',
     },
     {
       component: ServicesSection,

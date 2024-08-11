@@ -1,7 +1,9 @@
 import { GlobeIcon, MenuIcon } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { cn, getDirection } from '@/lib/utils';
+import { cn, getDirection, getLangFromHeaders } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 import React, { FC } from 'react';
@@ -10,16 +12,15 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
 }) => {
-  const headersList = headers();
-  const currentUrl = headersList.get('x-url') || '';
-  const url = new URL(currentUrl);
-  const lang = url.pathname.split('/')[1];
+  const lang = getLangFromHeaders(headers);
+  unstable_setRequestLocale(lang);
+  const t = useTranslations('HomePage.sections.header');
 
   const sections = [
     'home',
     'vision',
     'about',
-    'why Choose Us',
+    'why_choose_us',
     'services',
     'contact',
   ];
@@ -48,7 +49,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
                   key={section}
                   className="text-sm capitalize text-muted-foreground duration-300 hover:text-foreground"
                 >
-                  <Link href={`#${section}`}>{section}</Link>
+                  <Link href={`#${section}`}>{t(section)}</Link>
                 </li>
               ))}
             </ul>
@@ -56,7 +57,9 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
 
           <div className="flex items-center gap-6">
             <Button asChild size={'sm'}>
-              <Link href="#projects">Explore Projects</Link>
+              <Link href="#projects">
+                {lang === 'ar' ? 'تصفح اعمالنا' : 'Explore Projects'}
+              </Link>
             </Button>
             <Link
               href={`/${lang === 'en' ? 'ar' : 'en'}`}
@@ -88,7 +91,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
                     {sections.map((section) => (
                       <Link href={`#${section}`} key={section}>
                         <li className="rounded-lg px-4 py-1 text-md capitalize text-muted-foreground duration-300 hover:bg-accent hover:text-foreground">
-                          {section}
+                          {t(section)}
                         </li>
                       </Link>
                     ))}

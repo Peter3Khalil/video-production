@@ -1,6 +1,20 @@
 {
   "HomePage": {
-    "title": "Video Production"
+    "title": "Video Production",
+    "sections": {
+      "header": {
+        "home": "Home",
+        "vision": "Vision",
+        "about": "About",
+        "why_choose_us": "Why Choose Us",
+        "services": "Services",
+        "contact": "Contact"
+      },
+      "hero": {
+        "title": "Inspire - Initiate - Dream",
+        "description": "We are committed to providing value to our customers and partners, through quality service, innovative solutions, and close cooperation with our customers"
+      }
+    }
   },
   "Metadata": {
     "title": "Video Production Company",

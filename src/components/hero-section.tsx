@@ -4,20 +4,24 @@ import {
   SectionDescription,
   SectionContent,
 } from '@/components/layouts/section';
+import { getLangFromHeaders } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
 const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
+  const lang = getLangFromHeaders(headers);
+  unstable_setRequestLocale(lang);
+  const t = useTranslations('HomePage.sections.hero');
   return (
     <Section {...props} className="px-12">
       <SectionHeader>
         <h1 className="text-3xl font-bold leading-none md:text-nowrap md:text-5xl">
-          Inspire - Initiate - Dream
+          {t('title')}
         </h1>
-        <SectionDescription>
-          We are committed to providing value to our customers and partners,
-          through quality service, innovative solutions, and close cooperation
-        </SectionDescription>
+        <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
       <SectionContent className="mt-6 lg:w-[80%]">
         <Image
