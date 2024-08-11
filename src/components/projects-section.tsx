@@ -19,8 +19,7 @@ const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
           Our Projects
         </SectionTitle>
         <SectionDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, eget
-          nunc, amet, in. Nunc, eget nunc, amet, in
+          Check out some of our recent projects.
         </SectionDescription>
       </SectionHeader>
       <SectionContent className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

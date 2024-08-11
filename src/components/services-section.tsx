@@ -15,8 +15,7 @@ const ServicesSection: FC<React.ComponentProps<typeof Section>> = (props) => {
           Our Services
         </SectionTitle>
         <SectionDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, eget
-          nunc, amet, in. Nunc, eget nunc, amet, in
+          Explore the range of services we offer
         </SectionDescription>
       </SectionHeader>
       <SectionContent className="mt-6"></SectionContent>

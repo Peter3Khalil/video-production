@@ -16,13 +16,12 @@ const AboutUsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
       </SectionHeader>
       <SectionContent className="mt-6 text-center">
         <p className="mx-auto text-lg text-muted-foreground md:w-[70%]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-          similique eaque labore quasi iste rem porro explicabo, dolores ut
-          reiciendis sequi alias sint aperiam minima velit blanditiis quos nulla
-          sit deleniti molestiae possimus a ratione voluptates! Obcaecati
-          deleniti perferendis voluptatem accusantium nemo quibusdam ea
-          molestias nesciunt, magni eum, distinctio libero cumque deserunt
-          assumenda ab, sequi suscipit minima ex maiores sed.
+          Over a decade of work based on quality and a passion for success,
+          Dynamic Foundation was able to make a mark for itself as a house for
+          audio-visual production in the region in general, and in particular,
+          in which it cooperated with the strongest governmental and private
+          brands and created a Saudi team of the highest level of
+          professionalism.
         </p>
       </SectionContent>
     </Section>

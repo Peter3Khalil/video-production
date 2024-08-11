@@ -4,6 +4,7 @@ import HeroSection from '@/components/hero-section';
 import ProjectsSection from '@/components/projects-section';
 import ServicesSection from '@/components/services-section';
 import SplashScreen from '@/components/splash-screen';
+import VisionSection from '@/components/vision-section';
 import WhyUsSection from '@/components/why-us-section';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <div className="divide-y-[1px] divide-muted">
         <HeroSection />
         <ProjectsSection id="projects" />
+        <VisionSection />
         <AboutUsSection />
         <WhyUsSection />
         <ServicesSection />
