@@ -1,4 +1,5 @@
 import '@/app/globals.css';
+import { getDirection } from '@/lib/utils';
 import { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import {
@@ -39,7 +40,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <html lang={lang} dir={getDirection(lang)}>
       <body className="dark min-h-svh bg-background text-foreground antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}

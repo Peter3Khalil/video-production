@@ -1,4 +1,4 @@
-import { MenuIcon } from '@/components/shared/icons';
+import { GlobeIcon, MenuIcon } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -30,41 +30,75 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
       )}
       {...props}
     >
-      <nav className="flex w-full items-center justify-between">
-        <Link href="/" className="text-2xl font-bold leading-none">
-          Logo
-        </Link>
-        <ul className="hidden items-center gap-4 md:flex">
-          {[1, 2, 3, 4].map((item) => (
-            <li
-              key={item}
-              className="text-sm text-muted-foreground duration-300 hover:text-foreground"
+      <nav className="w-full">
+        {/* Desktop only */}
+        <div className="hidden w-full items-center justify-between md:flex">
+          <div className="flex items-center gap-12">
+            <Link
+              href={`/${lang}`}
+              className="hidden text-2xl font-bold leading-none md:block"
             >
-              <Link href={`/page-${item}`}>Page {item}</Link>
-            </li>
-          ))}
-        </ul>
+              Logo
+            </Link>
+            <ul className="flex items-center gap-4">
+              {[1, 2, 3, 4].map((item) => (
+                <li
+                  key={item}
+                  className="text-sm text-muted-foreground duration-300 hover:text-foreground"
+                >
+                  <Link href={`/page-${item}`}>Page {item}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <Button asChild size={'sm'} className="hidden md:flex">
-          <Link href="#projects">Explore Projects</Link>
-        </Button>
-        <div className="flex items-center md:hidden">
-          <Sheet>
-            <SheetTrigger>
-              <MenuIcon size={24} />
-            </SheetTrigger>
-            <SheetContent
-              side={getDirection(lang) === 'rtl' ? 'left' : 'right'}
+          <div className="flex items-center gap-6">
+            <Button asChild size={'sm'}>
+              <Link href="#projects">Explore Projects</Link>
+            </Button>
+            <Link
+              href={`/${lang === 'en' ? 'ar' : 'en'}`}
+              className="flex items-center gap-2"
+              dir={lang === 'en' ? 'rtl' : 'ltr'}
             >
-              <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
-                </SheetDescription>
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>
+              <GlobeIcon size={24} />
+              <span>{lang === 'en' ? 'العربية' : 'English'}</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile only */}
+        <div className="flex w-full items-center justify-between md:hidden">
+          <div className="flex flex-row-reverse items-center gap-2">
+            <Link href={`/${lang}`} className="text-2xl font-bold leading-none">
+              Logo
+            </Link>
+
+            <Sheet>
+              <SheetTrigger>
+                <MenuIcon size={24} />
+              </SheetTrigger>
+              <SheetContent
+                side={getDirection(lang) === 'rtl' ? 'right' : 'left'}
+              >
+                <SheetHeader>
+                  <SheetTitle>Are you absolutely sure?</SheetTitle>
+                  <SheetDescription>
+                    This action cannot be undone. This will permanently delete
+                    your account and remove your data from our servers.
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+          </div>
+          <Link
+            href={`/${lang === 'en' ? 'ar' : 'en'}`}
+            className="flex items-center gap-2"
+            dir={lang === 'en' ? 'rtl' : 'ltr'}
+          >
+            <GlobeIcon size={24} />
+            <span>{lang === 'en' ? 'العربية' : 'English'}</span>
+          </Link>
         </div>
       </nav>
     </header>

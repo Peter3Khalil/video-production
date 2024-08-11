@@ -11,12 +11,12 @@ const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   return (
     <Section {...props}>
       <SectionHeader>
-        <h1 className="text-5xl font-bold leading-none">
-          Your Vision, Our Lens
+        <h1 className="text-5xl font-bold leading-none md:text-nowrap">
+          Inspire - Initiate - Dream
         </h1>
         <SectionDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, eget
-          nunc, amet, in. Nunc, eget nunc, amet, in
+          We are committed to providing value to our customers and partners,
+          through quality service, innovative solutions, and close cooperation
         </SectionDescription>
       </SectionHeader>
       <SectionContent className="mt-6 lg:w-[80%]">

@@ -5,4 +5,5 @@ export {
   Cctv as EquipmentIcon,
   BarChart2Icon as ChartIcon,
   HeartHandshakeIcon as HeartIcon,
+  Globe as GlobeIcon,
 } from 'lucide-react';

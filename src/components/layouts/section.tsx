@@ -60,7 +60,7 @@ export const SectionContent: FC<React.HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   return (
     <div
-      className={cn('mx-auto flex flex-col gap-8 px-6', className)}
+      className={cn('mx-auto mt-6 flex flex-col gap-8 px-6', className)}
       {...props}
     >
       {children}
