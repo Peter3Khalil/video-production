@@ -13,6 +13,14 @@
       "hero": {
         "title": "Inspire - Initiate - Dream",
         "description": "We are committed to providing value to our customers and partners, through quality service, innovative solutions, and close cooperation with our customers"
+      },
+      "projects": {
+        "title": "Our Projects",
+        "description": "Check out some of our recent projects."
+      },
+      "about": {
+        "title": "About Us ?",
+        "description": "Over a decade of work based on quality and a passion for success, Dynamic Foundation was able to make a mark for itself as a house for audio-visual production in the region in general, and in particular, in which it cooperated with the strongest governmental and private brands and created a Saudi team of the highest level of professionalism."
       }
     }
   },
