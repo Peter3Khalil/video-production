@@ -20,6 +20,10 @@ const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   unstable_setRequestLocale(lang);
   const t = useTranslations('HomePage.sections.projects');
   const projects = [
+    'https://player.vimeo.com/video/997669454?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/997669496?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/997668648?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/997666773?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     'https://player.vimeo.com/video/997477629?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     'https://player.vimeo.com/video/997477608?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     'https://player.vimeo.com/video/997477562?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
