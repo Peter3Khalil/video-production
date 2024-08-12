@@ -22,7 +22,7 @@ const AboutUsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         </SectionTitle>
       </SectionHeader>
       <SectionContent className="mt-6 text-center">
-        <p className="mx-auto text-lg text-muted-foreground md:w-[70%]">
+        <p className="mx-auto text-lg text-muted-foreground md:w-[70%] md:max-w-lg">
           {t('description')}
         </p>
       </SectionContent>

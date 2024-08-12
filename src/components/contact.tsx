@@ -8,17 +8,24 @@ import {
 import { Button } from '@/components/ui/button';
 import { MailIcon, PhoneIcon } from '@/components/shared/icons';
 import React, { FC } from 'react';
+import { getLangFromHeaders } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { headers } from 'next/headers';
 
 const Contact: FC<React.ComponentProps<typeof Section>> = (props) => {
+  const lang = getLangFromHeaders(headers);
+  unstable_setRequestLocale(lang);
+  const t = useTranslations('HomePage.sections.contact');
+
   return (
     <Section {...props}>
       <SectionHeader className="mx-auto md:max-w-sm">
         <SectionTitle className="px-12 text-3xl font-bold md:text-nowrap">
-          Let&apos;s Starting Build Your Vision
+          {t('title')}
         </SectionTitle>
         <SectionDescription className="px-12 md:p-0">
-          Get in touch with us for all your photography, advertising, and event
-          management needs.
+          {t('description')}
         </SectionDescription>
       </SectionHeader>
       <SectionContent className="mx-auto flex w-fit flex-row items-center justify-center gap-4">
@@ -28,13 +35,13 @@ const Contact: FC<React.ComponentProps<typeof Section>> = (props) => {
             className="flex items-center gap-2"
           >
             <MailIcon size={20} className="shrink-0" />
-            Email us
+            {t('email')}
           </a>
         </Button>
         <Button variant={'secondary'} className="w-[110px]" asChild>
           <a href="tel:+966540003848" className="flex items-center gap-2">
             <PhoneIcon size={20} className="shrink-0" />
-            Call us
+            {t('phone')}
           </a>
         </Button>
       </SectionContent>
