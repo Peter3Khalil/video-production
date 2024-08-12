@@ -64,7 +64,7 @@ const ServicesSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         {services.map(({ image, key, details }, index) => (
           <Card key={index}>
             <CardHeader>
-              <div className="relative h-[300px] w-full rounded-lg">
+              <div className="relative h-[200px] w-full rounded-lg md:h-[300px]">
                 <Image
                   src={`/services/${image}`}
                   fill

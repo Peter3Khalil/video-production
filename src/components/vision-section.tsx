@@ -72,12 +72,12 @@ const VisionCard: FC<VisionCardProps> = ({
       )}
       {...props}
     >
-      <div className="relative min-h-[50vh] w-full md:max-w-[50%]">
+      <div className="relative h-[40vh] w-full md:aspect-square md:h-[50vh] md:max-w-[50%]">
         <Image
           src={image}
           alt="Vision Image"
           fill
-          className="absolute rounded-lg object-cover"
+          className="absolute rounded-lg object-cover object-center"
         />
       </div>
       <article className="flex-1 space-y-4">

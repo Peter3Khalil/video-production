@@ -23,14 +23,13 @@ const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         </h1>
         <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
-      <SectionContent className="mt-6 lg:w-[80%]">
+      <SectionContent className="relative mt-6 h-[50vh] bg-yellow-300 md:h-[70vh] lg:w-[80%]">
         <Image
           src="/hero.webp"
-          width={560 * 1.5}
-          height={560}
+          fill
           loading="eager"
           alt="Hero Image"
-          className="w-full rounded-lg"
+          className="absolute left-0 top-0 rounded-lg object-cover object-center"
         />
       </SectionContent>
     </Section>
