@@ -28,7 +28,7 @@ const Contact: FC<React.ComponentProps<typeof Section>> = (props) => {
           {t('description')}
         </SectionDescription>
       </SectionHeader>
-      <SectionContent className="mx-auto flex w-fit items-center justify-center gap-4 md:flex-row">
+      <SectionContent className="mx-auto flex w-fit flex-row items-center justify-center gap-4">
         <Button asChild>
           <a
             href="mailto:admin@dynamicmediapro.com"
