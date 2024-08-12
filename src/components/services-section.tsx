@@ -12,42 +12,43 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { getLangFromHeaders } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
 const ServicesSection: FC<React.ComponentProps<typeof Section>> = (props) => {
+  const lang = getLangFromHeaders(headers);
+  unstable_setRequestLocale(lang);
+  const t = useTranslations('HomePage.sections.services');
   const services = [
     {
-      title: 'Photography',
+      key: 'photography',
       image: 'photography.webp',
-      description:
-        'We provide professional photography services for all occasions.',
       details: [
-        'Commercial Photography',
-        'Photography and Documentary Coverage',
-        'Locations and Aerial Photography',
+        'commercial_photography',
+        'photography_documentary',
+        'locations_aerial',
       ],
     },
     {
-      title: 'Advertising Campaigns',
+      key: 'advertising_campaigns',
       image: 'advertising.webp',
-      description:
-        'We help you create and run advertising campaigns to reach your target audience.',
       details: [
-        'Building Strategies',
-        'Business & Marketing Plan',
-        'Production and Implementation',
+        'building_strategies',
+        'business_marketing_plan',
+        'production_implementation',
       ],
     },
     {
-      title: 'Event Management',
+      key: 'event_management',
       image: 'events.webp',
-      description:
-        'We provide event management services for all types of events.',
       details: [
-        'Music Concerts',
-        'Creating Ideas for plants',
-        'Festivals & Popular heritage',
+        'music_concerts',
+        'creating_ideas_plants',
+        'festivals_heritage',
       ],
     },
   ];
@@ -55,31 +56,33 @@ const ServicesSection: FC<React.ComponentProps<typeof Section>> = (props) => {
     <Section {...props}>
       <SectionHeader className="mx-auto md:max-w-sm">
         <SectionTitle className="text-3xl font-bold leading-none">
-          Our Services
+          {t('title')}
         </SectionTitle>
-        <SectionDescription>
-          Explore the range of services we offer
-        </SectionDescription>
+        <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
       <SectionContent className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {services.map(({ image, title, description, details }, index) => (
+        {services.map(({ image, key, details }, index) => (
           <Card key={index}>
             <CardHeader>
               <div className="relative h-[300px] w-full rounded-lg">
                 <Image
                   src={`/services/${image}`}
                   fill
-                  alt={title}
+                  alt={t(`services.${key}.title`)}
                   className="absolute rounded-[inherit] object-cover"
                 />
               </div>
-              <CardTitle className="text-xl">{title}</CardTitle>
-              <CardDescription>{description}</CardDescription>
+              <CardTitle className="text-xl">
+                {t(`services.${key}.title`)}
+              </CardTitle>
+              <CardDescription>
+                {t(`services.${key}.description`)}
+              </CardDescription>
             </CardHeader>
             <CardContent className="text-md text-muted-foreground">
               <ul className="list-disc px-6">
                 {details.map((detail, index) => (
-                  <li key={index}>{detail}</li>
+                  <li key={index}>{t(`services.${key}.details.${detail}`)}</li>
                 ))}
               </ul>
             </CardContent>
