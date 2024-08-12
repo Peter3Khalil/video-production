@@ -1,4 +1,5 @@
 import { GlobeIcon, MenuIcon } from '@/components/shared/icons';
+import ThemeChanger from '@/components/theme-changer';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn, getDirection, getLangFromHeaders } from '@/lib/utils';
@@ -61,7 +62,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
                 {lang === 'ar' ? 'تصفح اعمالنا' : 'Explore Projects'}
               </Link>
             </Button>
-            {/* <ThemeChanger /> */}
+            <ThemeChanger />
             <Link
               href={`/${lang === 'en' ? 'ar' : 'en'}`}
               className="flex items-center gap-2"
@@ -102,7 +103,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
             </Sheet>
           </div>
           <div className="flex items-center gap-6">
-            {/* <ThemeChanger /> */}
+            <ThemeChanger />
             <Link
               href={`/${lang === 'en' ? 'ar' : 'en'}`}
               className="flex items-center gap-2"
