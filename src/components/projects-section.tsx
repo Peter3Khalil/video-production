@@ -39,11 +39,11 @@ const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         </SectionTitle>
         <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
-      <SectionContent className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <SectionContent className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <CustomIframe
             key={index}
-            className="h-[250px] w-full rounded-[inherit]"
+            className="aspect-video h-[200px] w-full rounded-lg md:aspect-auto md:h-[250px]"
           >
             <CustomIframePlaceholder />
             <CustomIframeContent
