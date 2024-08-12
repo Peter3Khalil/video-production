@@ -5,11 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   reactStrictMode: true,
   images:{
-    remotePatterns:[{hostname:"event-town-api.onrender.com"},{
-      hostname:"picsum.photos"
-    },{
-      hostname:"example.com"
-    }]
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
   }
 };
 
