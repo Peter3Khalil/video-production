@@ -1,5 +1,4 @@
 import '@/app/globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
 import { getDirection } from '@/lib/utils';
 import { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
@@ -42,16 +41,9 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} dir={getDirection(lang)}>
-      <body className="min-h-svh bg-background text-foreground antialiased">
+      <body className="dark min-h-svh bg-background text-foreground antialiased">
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

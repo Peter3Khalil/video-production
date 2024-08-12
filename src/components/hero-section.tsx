@@ -23,7 +23,7 @@ const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         </h1>
         <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
-      <SectionContent className="relative mt-6 h-[50vh] bg-yellow-300 md:h-[70vh] lg:w-[80%]">
+      <SectionContent className="relative mt-6 h-[50vh] md:h-[70vh] lg:w-[80%]">
         <Image
           src="/hero.webp"
           fill
