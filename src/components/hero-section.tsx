@@ -17,15 +17,17 @@ const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   return (
     <Section
       {...props}
-      className="relative flex h-[70vh] flex-col items-center justify-center px-12 md:h-[80vh]"
+      className="relative flex h-[50vh] flex-col items-center justify-center px-12 md:h-[80vh]"
     >
       <SectionHeader>
-        <h1 className="text-3xl font-bold leading-none md:text-nowrap md:text-5xl">
+        <h1 className="text-nowrap text-2xl font-bold leading-none md:text-5xl">
           {t('title')}
         </h1>
-        <SectionDescription>{t('description')}</SectionDescription>
+        <SectionDescription className="text-xs">
+          {t('description')}
+        </SectionDescription>
       </SectionHeader>
-      <div className="hero-image absolute -z-10 h-full w-full">
+      <div className="hero-image absolute -z-10 h-full w-full lg:w-[80%]">
         <Image
           src="/hero.webp"
           fill
