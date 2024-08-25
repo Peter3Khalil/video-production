@@ -1,8 +1,7 @@
 import {
   Section,
-  SectionHeader,
   SectionDescription,
-  SectionContent,
+  SectionHeader,
 } from '@/components/layouts/section';
 import { getLangFromHeaders } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
@@ -16,22 +15,25 @@ const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   unstable_setRequestLocale(lang);
   const t = useTranslations('HomePage.sections.hero');
   return (
-    <Section {...props} className="px-12">
+    <Section
+      {...props}
+      className="relative flex h-[70vh] flex-col items-center justify-center px-12 md:h-[80vh]"
+    >
       <SectionHeader>
         <h1 className="text-3xl font-bold leading-none md:text-nowrap md:text-5xl">
           {t('title')}
         </h1>
         <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
-      <SectionContent className="relative mt-6 h-[50vh] md:h-[70vh] lg:w-[80%]">
+      <div className="hero-image absolute -z-10 h-full w-full">
         <Image
           src="/hero.webp"
           fill
           loading="eager"
           alt="Hero Image"
-          className="absolute left-0 top-0 rounded-lg object-cover object-center"
+          className="absolute left-0 top-0 -z-10 size-full object-cover object-center"
         />
-      </SectionContent>
+      </div>
     </Section>
   );
 };
