@@ -79,6 +79,7 @@ export const CustomIframePlaceholder: FC<
 
 export const CustomIframeContent: FC<React.HTMLProps<HTMLIFrameElement>> = ({
   className,
+  title,
   ...props
 }) => {
   const { isLoaded, setIsLoaded, onError, onLoad, inView } = useCustomIframe();
@@ -94,6 +95,7 @@ export const CustomIframeContent: FC<React.HTMLProps<HTMLIFrameElement>> = ({
   return inView ? (
     <iframe
       {...props}
+      title={title}
       loading="lazy"
       onLoad={handleOnLoad}
       onError={onError}

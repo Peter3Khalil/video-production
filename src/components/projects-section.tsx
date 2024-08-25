@@ -50,6 +50,7 @@ const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
               className="rounded-[inherit]"
               allowFullScreen
               src={project}
+              title={`Project ${index + 1}`}
             />
           </CustomIframe>
         ))}
