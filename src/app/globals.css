@@ -69,8 +69,28 @@
   }
 }
 
+@font-face {
+  font-family: 'ONE_DAY';
+  src: url('../../public/font/ONEDAY.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   font-size: 16px;
+  font-family: 'ONE_DAY', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+/* Make overlay for hero image */
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 640px) {
