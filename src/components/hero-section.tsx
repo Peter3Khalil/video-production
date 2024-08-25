@@ -17,7 +17,7 @@ const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   return (
     <Section
       {...props}
-      className="relative flex h-[50vh] flex-col items-center justify-center px-12 text-center md:h-[80vh]"
+      className="relative flex h-[40vh] flex-col items-center justify-center px-12 text-center md:h-[80vh]"
     >
       <SectionHeader>
         <h1 className="text-nowrap text-xl font-bold leading-none md:text-5xl">
