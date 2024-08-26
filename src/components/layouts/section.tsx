@@ -38,7 +38,7 @@ export const SectionTitle: FC<React.HTMLAttributes<HTMLHeadingElement>> = ({
 }) => {
   return (
     <h2
-      className={cn('text-xl font-bold leading-none md:text-3xl', className)}
+      className={cn('text-2xl font-bold leading-none md:text-3xl', className)}
       {...props}
     >
       {children}
