@@ -17,9 +17,11 @@ const OurClientsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
   const t = useTranslations('HomePage.sections.customers');
-  const images = Array.from({ length: 14 }).map(
+  const images = Array.from({ length: 13 }).map(
     (_, i) => `/customers/${i + 1}.jpeg`,
   );
+  const firstRow = images.slice(0, 7);
+  const secondRow = images.slice(7);
   return (
     <Section {...props}>
       <SectionHeader>
@@ -28,7 +30,7 @@ const OurClientsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
       </SectionHeader>
       <SectionContent className="gap-2 p-0" dir="ltr">
         <Marquee className="[--duration:20s]">
-          {images.slice(0, 7).map((_, i) => (
+          {firstRow.map((_, i) => (
             <Image
               src={`/clients/${i + 1}.jpeg`}
               alt={`Client ${i + 1}`}
@@ -41,7 +43,7 @@ const OurClientsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
           ))}
         </Marquee>
         <Marquee reverse className="[--duration:20s]">
-          {images.slice(7).map((_, i) => (
+          {secondRow.map((_, i) => (
             <Image
               src={`/clients/${i + 8}.jpeg`}
               alt={`Client ${i + 8}`}
