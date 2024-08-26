@@ -2,6 +2,7 @@ import AboutUsSection from '@/components/about-us-section';
 import Contact from '@/components/contact';
 import Header from '@/components/header';
 import HeroSection from '@/components/hero-section';
+import OurCustomerSection from '@/components/our-customers-section';
 import ProjectsSection from '@/components/projects-section';
 import ServicesSection from '@/components/services-section';
 import SplashScreen from '@/components/splash-screen';
@@ -13,6 +14,10 @@ const Home = () => {
     {
       component: HeroSection,
       id: 'home',
+    },
+    {
+      component: OurCustomerSection,
+      id: 'our_customers',
     },
     {
       component: ProjectsSection,

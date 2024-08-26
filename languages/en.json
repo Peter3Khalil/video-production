@@ -120,6 +120,10 @@
         "description": "Get in touch with us to learn more about our services and how we can help you achieve your goals.",
         "email": "Email Us",
         "phone": "Call Us"
+      },
+      "customers": {
+        "title": "Our Customers",
+        "description": "We have worked with some of the biggest brands in the industry."
       }
     }
   },
