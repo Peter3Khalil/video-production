@@ -13,9 +13,7 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
-const OurCustomerSection: FC<React.ComponentProps<typeof Section>> = (
-  props,
-) => {
+const OurClientsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
   const t = useTranslations('HomePage.sections.customers');
@@ -32,12 +30,12 @@ const OurCustomerSection: FC<React.ComponentProps<typeof Section>> = (
         <Marquee className="[--duration:20s]">
           {images.slice(0, 7).map((_, i) => (
             <Image
-              src={`/customers/${i + 1}.jpeg`}
-              alt={`Customer ${i + 1}`}
+              src={`/clients/${i + 1}.jpeg`}
+              alt={`Client ${i + 1}`}
               sizes="100vw"
               width={500}
               height={300}
-              className="mx-6 h-20 w-auto"
+              className="h-20 w-auto rounded-lg"
               key={i}
             />
           ))}
@@ -45,12 +43,12 @@ const OurCustomerSection: FC<React.ComponentProps<typeof Section>> = (
         <Marquee reverse className="[--duration:20s]">
           {images.slice(7).map((_, i) => (
             <Image
-              src={`/customers/${i + 8}.jpeg`}
-              alt={`Customer ${i + 8}`}
+              src={`/clients/${i + 8}.jpeg`}
+              alt={`Client ${i + 8}`}
               sizes="100vw"
               width={500}
               height={300}
-              className="mx-6 h-20 w-auto"
+              className="h-20 w-auto rounded-lg"
               key={i}
             />
           ))}
@@ -60,4 +58,4 @@ const OurCustomerSection: FC<React.ComponentProps<typeof Section>> = (
   );
 };
 
-export default OurCustomerSection;
+export default OurClientsSection;

@@ -2,7 +2,7 @@ import AboutUsSection from '@/components/about-us-section';
 import Contact from '@/components/contact';
 import Header from '@/components/header';
 import HeroSection from '@/components/hero-section';
-import OurCustomerSection from '@/components/our-customers-section';
+import OurClientsSection from '@/components/our-clients-section';
 import ProjectsSection from '@/components/projects-section';
 import ServicesSection from '@/components/services-section';
 import SplashScreen from '@/components/splash-screen';
@@ -16,7 +16,7 @@ const Home = () => {
       id: 'home',
     },
     {
-      component: OurCustomerSection,
+      component: OurClientsSection,
       id: 'our_customers',
     },
     {
