@@ -27,10 +27,8 @@ const VisionSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   });
   return (
     <Section {...props}>
-      <SectionHeader className="mx-auto md:max-w-lg">
-        <SectionTitle className="text-3xl font-bold leading-none">
-          {t('title')}
-        </SectionTitle>
+      <SectionHeader>
+        <SectionTitle>{t('title')}</SectionTitle>
         <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
       <SectionContent className="mt-12 gap-20">

@@ -54,10 +54,8 @@ const ServicesSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   ];
   return (
     <Section {...props}>
-      <SectionHeader className="mx-auto md:max-w-sm">
-        <SectionTitle className="text-3xl font-bold leading-none">
-          {t('title')}
-        </SectionTitle>
+      <SectionHeader>
+        <SectionTitle>{t('title')}</SectionTitle>
         <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
       <SectionContent className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

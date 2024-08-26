@@ -37,7 +37,10 @@ export const SectionTitle: FC<React.HTMLAttributes<HTMLHeadingElement>> = ({
   ...props
 }) => {
   return (
-    <h2 className={cn('text-3xl font-bold leading-none', className)} {...props}>
+    <h2
+      className={cn('text-xl font-bold leading-none md:text-3xl', className)}
+      {...props}
+    >
       {children}
     </h2>
   );
@@ -47,7 +50,7 @@ export const SectionDescription: FC<
   React.HTMLAttributes<HTMLParagraphElement>
 > = ({ className, children, ...props }) => {
   return (
-    <p className={cn('text-md text-muted-foreground', className)} {...props}>
+    <p className={cn('text-xs text-muted-foreground', className)} {...props}>
       {children}
     </p>
   );
@@ -60,7 +63,7 @@ export const SectionContent: FC<React.HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   return (
     <div
-      className={cn('mx-auto mt-6 flex flex-col gap-8 px-6', className)}
+      className={cn('mx-auto mt-6 flex flex-col gap-8 px-6 text-xs', className)}
       {...props}
     >
       {children}

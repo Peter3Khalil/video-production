@@ -51,13 +51,11 @@ const WhyUsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   ];
   return (
     <Section {...props}>
-      <SectionHeader className="mx-auto md:max-w-sm">
-        <SectionTitle className="text-3xl font-bold leading-none">
-          {t('title')}
-        </SectionTitle>
+      <SectionHeader>
+        <SectionTitle>{t('title')}</SectionTitle>
         <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
-      <SectionContent className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+      <SectionContent className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-4">
         {reasons.map(({ key, icon: Icon }, i) => (
           <div
             key={i}

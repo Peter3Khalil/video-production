@@ -34,12 +34,10 @@ const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   return (
     <Section {...props}>
       <SectionHeader>
-        <SectionTitle className="text-3xl font-bold leading-none">
-          {t('title')}
-        </SectionTitle>
+        <SectionTitle>{t('title')}</SectionTitle>
         <SectionDescription>{t('description')}</SectionDescription>
       </SectionHeader>
-      <SectionContent className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <SectionContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <CustomIframe
             key={index}

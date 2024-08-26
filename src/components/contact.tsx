@@ -21,14 +21,14 @@ const Contact: FC<React.ComponentProps<typeof Section>> = (props) => {
   return (
     <Section {...props}>
       <SectionHeader className="mx-auto md:max-w-sm">
-        <SectionTitle className="px-12 text-3xl font-bold md:text-nowrap">
+        <SectionTitle className="px-12 md:text-nowrap">
           {t('title')}
         </SectionTitle>
         <SectionDescription className="px-12 md:p-0">
           {t('description')}
         </SectionDescription>
       </SectionHeader>
-      <SectionContent className="mx-auto flex w-fit flex-row items-center justify-center gap-4">
+      <SectionContent className="w-fit flex-row items-center justify-center gap-4">
         <Button asChild>
           <a
             href="mailto:admin@dynamicmediapro.com"

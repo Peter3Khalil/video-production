@@ -16,13 +16,11 @@ const AboutUsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   const t = useTranslations('HomePage.sections.about');
   return (
     <Section {...props}>
-      <SectionHeader className="mx-auto md:max-w-sm">
-        <SectionTitle className="text-3xl font-bold leading-none">
-          {t('title')}
-        </SectionTitle>
+      <SectionHeader>
+        <SectionTitle>{t('title')}</SectionTitle>
       </SectionHeader>
-      <SectionContent className="mt-6 text-center">
-        <p className="mx-auto text-lg text-muted-foreground md:w-[70%] md:max-w-lg">
+      <SectionContent className="text-center">
+        <p className="mx-auto text-muted-foreground md:w-[70%] md:max-w-lg">
           {t('description')}
         </p>
       </SectionContent>
