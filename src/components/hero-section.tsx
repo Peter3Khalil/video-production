@@ -23,7 +23,7 @@ const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         <h1 className="text-nowrap text-xl font-bold leading-none md:text-5xl">
           {t('title')}
         </h1>
-        <SectionDescription className="text-xs">
+        <SectionDescription className="text-xs text-accent-foreground/80">
           {t('description')}
         </SectionDescription>
       </SectionHeader>
