@@ -47,7 +47,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
               {sections.map((section) => (
                 <li
                   key={section}
-                  className="text-sm capitalize text-muted-foreground duration-300 hover:text-foreground"
+                  className="text-xs capitalize text-muted-foreground duration-300 hover:text-foreground"
                 >
                   <Link href={`#${section}`}>{t(section)}</Link>
                 </li>
@@ -90,7 +90,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
                   <ul className="flex flex-col gap-4">
                     {sections.map((section) => (
                       <Link href={`#${section}`} key={section}>
-                        <li className="rounded-lg px-4 py-1 text-md capitalize text-muted-foreground duration-300 hover:bg-accent hover:text-foreground">
+                        <li className="text-md rounded-lg px-4 py-1 capitalize text-muted-foreground duration-300 hover:bg-accent hover:text-foreground">
                           {t(section)}
                         </li>
                       </Link>
