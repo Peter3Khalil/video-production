@@ -1,4 +1,6 @@
 import '@/app/globals.css';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 import { getDirection } from '@/lib/utils';
 import { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
@@ -42,9 +44,11 @@ export default async function RootLayout({
   return (
     <html lang={lang} dir={getDirection(lang)}>
       <body className="dark h-svh overflow-y-auto bg-background text-foreground antialiased">
+        <Header />
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <main className="pt-16">{children}</main>
         </NextIntlClientProvider>
+        <Footer />
       </body>
     </html>
   );

@@ -1,4 +1,3 @@
-import Header from '@/components/header';
 import HeroSection from '@/components/hero-section';
 import OurClientsSection from '@/components/our-clients-section';
 import ProjectsSection from '@/components/projects-section';
@@ -20,15 +19,14 @@ const Home = () => {
     },
   ];
   return (
-    <main className="pt-16">
+    <div>
       <SplashScreen />
-      <Header />
       <div className="divide-y-[1px] divide-muted">
         {sections.map(({ component: Section, id }) => (
           <Section key={id} id={id} />
         ))}
       </div>
-    </main>
+    </div>
   );
 };
 
