@@ -4,11 +4,8 @@
     "sections": {
       "header": {
         "home": "Home",
-        "vision": "Vision",
-        "about": "About",
-        "why_choose_us": "Why Choose Us",
-        "services": "Services",
-        "contact": "Contact"
+        "projects": "Projects",
+        "our_clients": "Our Clients"
       },
       "hero": {
         "title": "Inspire - Initiate - Dream",

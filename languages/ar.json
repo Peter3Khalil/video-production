@@ -4,11 +4,8 @@
     "sections": {
       "header": {
         "home": "الرئيسية",
-        "vision": "الرؤية",
-        "about": "من نحن",
-        "why_choose_us": "لماذا تختارنا",
-        "services": "الخدمات",
-        "contact": "اتصل بنا"
+        "projects": "المشاريع",
+        "our_clients": "عملاؤنا"
       },
       "hero": {
         "title": "ألهم - بادر - احلم",
