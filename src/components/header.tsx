@@ -1,4 +1,5 @@
 import { GlobeIcon, MenuIcon } from '@/components/shared/icons';
+import Logo from '@/components/shared/logo';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn, getDirection, getLangFromHeaders } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
@@ -30,11 +31,8 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
         {/* Desktop only */}
         <div className="hidden w-full items-center justify-between md:flex">
           <div className="flex items-center gap-12">
-            <Link
-              href={`/${lang}`}
-              className="hidden text-2xl font-bold leading-none md:block"
-            >
-              Logo
+            <Link href={`/${lang}`} className="hidden md:block">
+              <Logo />
             </Link>
             <ul className="flex items-center gap-4">
               {sections.map((section) => (
@@ -63,8 +61,8 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
         {/* Mobile only */}
         <div className="flex w-full items-center justify-between md:hidden">
           <div className="flex flex-row-reverse items-center gap-2">
-            <Link href={`/${lang}`} className="text-2xl font-bold leading-none">
-              Logo
+            <Link href={`/${lang}`}>
+              <Logo width={100} height={100} />
             </Link>
 
             <Sheet>
