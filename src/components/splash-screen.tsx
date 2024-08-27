@@ -16,7 +16,7 @@ const SplashScreen = () => {
 
   if (hideSplash) return null;
   return (
-    <div className="fixed left-0 top-0 z-40 h-svh w-screen bg-black">
+    <div className="fixed left-0 top-0 z-40 h-screen w-screen bg-black">
       <video
         autoPlay
         muted
