@@ -20,6 +20,7 @@ const SplashScreen = () => {
       <video
         autoPlay
         muted
+        playsInline
         className="h-full w-full object-contain md:object-cover"
       >
         <source src="/splash-video.mp4" type="video/mp4" />
