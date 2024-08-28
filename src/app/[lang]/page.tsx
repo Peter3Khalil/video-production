@@ -1,7 +1,7 @@
 import HeroSection from '@/components/hero-section';
+import withSplashScreen from '@/components/HOC/withSplashScreen';
 import OurClientsSection from '@/components/our-clients-section';
 import ProjectsSection from '@/components/projects-section';
-import SplashScreen from '@/components/splash-screen';
 
 const Home = () => {
   const sections = [
@@ -20,7 +20,6 @@ const Home = () => {
   ];
   return (
     <div>
-      <SplashScreen />
       <div className="divide-y-[1px] divide-muted">
         {sections.map(({ component: Section, id }) => (
           <Section key={id} id={id} />
@@ -30,4 +29,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withSplashScreen(Home);
