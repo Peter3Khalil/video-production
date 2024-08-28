@@ -2,6 +2,7 @@
 import { GlobeIcon, MenuIcon } from '@/components/shared/icons';
 import Logo from '@/components/shared/logo';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn, getDirection } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -15,10 +16,12 @@ type MenuProps = React.HTMLAttributes<HTMLDivElement> & {
 const MobileNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { isMatched: isMobile } = useMediaQuery({ maxWidth: 768 });
+  if (!isMobile) return null;
   return (
     <div
       className={cn(
-        'flex w-full items-center justify-between md:hidden',
+        'text-md flex w-full items-center justify-between md:hidden',
         className,
       )}
       {...props}
@@ -39,7 +42,7 @@ const MobileNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
                   <li
                     key={item.title}
                     className={cn(
-                      'text-md rounded-lg px-4 py-1 capitalize text-muted-foreground duration-300 hover:bg-accent hover:text-foreground',
+                      'rounded-lg px-4 py-1 capitalize text-muted-foreground duration-300 hover:bg-accent hover:text-foreground',
                       {
                         'text-foreground': pathname === item.href,
                       },

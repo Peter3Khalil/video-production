@@ -1,6 +1,7 @@
 'use client';
 import { GlobeIcon } from '@/components/shared/icons';
 import Logo from '@/components/shared/logo';
+import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -13,10 +14,12 @@ type MenuProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const DesktopNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
   const pathname = usePathname();
+  const { isMatched: isLargeScreen } = useMediaQuery({ minWidth: 768 });
+  if (!isLargeScreen) return null;
   return (
     <nav
       className={cn(
-        'hidden w-full items-center justify-between md:flex',
+        'hidden w-full items-center justify-between text-xs md:flex',
         className,
       )}
       {...props}
@@ -30,7 +33,7 @@ const DesktopNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
             <li
               key={item.title}
               className={cn(
-                'text-xs capitalize text-muted-foreground duration-300 hover:text-foreground',
+                'capitalize text-muted-foreground duration-300 hover:text-foreground',
                 {
                   'text-foreground': pathname === item.href,
                 },
