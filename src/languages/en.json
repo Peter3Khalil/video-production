@@ -59,9 +59,7 @@
     }
   },
   "WhyChooseUsPage": {
-    "title": "Why Choose Us ?",
-    "description": "We are a team of professionals who are dedicated to providing you with the best service and support.",
-    "reasons": {
+    "content": {
       "24_7_services": {
         "title": "24/7 Service",
         "description": "We're available 24/7 to provide you with the best service and support."
@@ -86,6 +84,10 @@
         "title": "50+ Partners",
         "description": "We have over 50 partners to provide you with the best service."
       }
+    },
+    "metadata": {
+      "title": "Why Choose Us ?",
+      "description": "We are a team of professionals who are dedicated to providing you with the best service and support."
     }
   },
   "ServicesPage": {
