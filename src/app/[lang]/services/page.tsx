@@ -1,3 +1,4 @@
+import withSplashScreen from '@/components/HOC/withSplashScreen';
 import {
   Section,
   SectionContent,
@@ -12,75 +13,74 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { getLangFromHeaders } from '@/lib/utils';
+import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
-import { headers } from 'next/headers';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
-import React, { FC } from 'react';
 
-const ServicesSection: FC<React.ComponentProps<typeof Section>> = (props) => {
-  const lang = getLangFromHeaders(headers);
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({ locale: lang, namespace: 'ServicesPage' });
+
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+  };
+}
+
+const Services = ({ params: { lang } }: { params: { lang: string } }) => {
   unstable_setRequestLocale(lang);
-  const t = useTranslations('HomePage.sections.services');
+  const t = useTranslations('ServicesPage');
   const services = [
     {
       key: 'photography',
       image: 'photography.webp',
-      details: [
-        'commercial_photography',
-        'photography_documentary',
-        'locations_aerial',
-      ],
     },
     {
       key: 'advertising_campaigns',
       image: 'advertising.webp',
-      details: [
-        'building_strategies',
-        'business_marketing_plan',
-        'production_implementation',
-      ],
     },
     {
       key: 'event_management',
       image: 'events.webp',
-      details: [
-        'music_concerts',
-        'creating_ideas_plants',
-        'festivals_heritage',
-      ],
+    },
+    {
+      key: 'films',
+      image: 'films.webp',
     },
   ];
   return (
-    <Section {...props}>
+    <Section>
       <SectionHeader>
-        <SectionTitle>{t('title')}</SectionTitle>
-        <SectionDescription>{t('description')}</SectionDescription>
+        <SectionTitle>{t('metadata.title')}</SectionTitle>
+        <SectionDescription>{t('metadata.description')}</SectionDescription>
       </SectionHeader>
       <SectionContent className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {services.map(({ image, key, details }, index) => (
+        {services.map(({ image, key }, index) => (
           <Card key={index}>
             <CardHeader>
               <div className="relative h-[200px] w-full rounded-lg md:h-[300px]">
                 <Image
                   src={`/assets/images/services/${image}`}
                   fill
-                  alt={t(`services.${key}.title`)}
+                  alt={t(`content.${key}.title`)}
                   className="absolute rounded-[inherit] object-cover"
                 />
               </div>
-              <CardTitle className="text-xl">
-                {t(`services.${key}.title`)}
+              <CardTitle className="text-lg tracking-widest">
+                {t(`content.${key}.title`)}
               </CardTitle>
-              <CardDescription>
-                {t(`services.${key}.description`)}
+              <CardDescription className="text-xs">
+                {t(`content.${key}.description`)}
               </CardDescription>
             </CardHeader>
             <CardContent className="text-md text-muted-foreground">
-              <ul className="list-disc px-6">
-                {details.map((detail, index) => (
-                  <li key={index}>{t(`services.${key}.details.${detail}`)}</li>
+              <ul className="list-disc space-y-2 px-6">
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <li key={index}>{t(`content.${key}.details.${i}`)}</li>
                 ))}
               </ul>
             </CardContent>
@@ -91,4 +91,4 @@ const ServicesSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   );
 };
 
-export default ServicesSection;
+export default withSplashScreen(Services);

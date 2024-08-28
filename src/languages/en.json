@@ -91,36 +91,43 @@
     }
   },
   "ServicesPage": {
-    "title": "Our Services",
-    "description": "Explore the range of services we offer",
-    "services": {
+    "content": {
       "photography": {
         "title": "Photography",
         "description": "We provide professional photography services for all occasions.",
-        "details": {
-          "commercial_photography": "Commercial Photography",
-          "photography_documentary": "Photography and Documentary Coverage",
-          "locations_aerial": "Locations and Aerial Photography"
-        }
+        "details": [
+          "Commercial Photography",
+          "Photography and Documentary Coverage",
+          "Locations and Aerial Photography"
+        ]
       },
       "advertising_campaigns": {
-        "title": "Advertising Campaigns",
-        "description": "We help you create and run advertising campaigns to reach your target audience.",
-        "details": {
-          "building_strategies": "Building Strategies",
-          "business_marketing_plan": "Business & Marketing Plan",
-          "production_implementation": "Production and Implementation"
-        }
+        "title": "B2B Marketing",
+        "description": "Are you finding it difficult to reach government entities, the private sector, or business executives? We're here to bridge that gap with tailored and precise ad campaigns that target your business sectors and effectively promote your services.",
+        "details": [
+          "Building Strategies",
+          "Business & Marketing Plan",
+          "Production and Implementation"
+        ]
       },
       "event_management": {
         "title": "Event Management",
         "description": "We provide event management services for all types of events.",
-        "details": {
-          "music_concerts": "Music Concerts",
-          "creating_ideas_plants": "Creating Ideas for Plants",
-          "festivals_heritage": "Festivals & Popular Heritage"
-        }
+        "details": [
+          "Music Concerts",
+          "Creating Ideas for Plants",
+          "Festivals & Popular Heritage"
+        ]
+      },
+      "films": {
+        "title": "Films Production",
+        "description": "We provide professional film production services for all occasions.",
+        "details": ["Idea analysis", "scriptwriting", "team selection"]
       }
+    },
+    "metadata": {
+      "title": "Our Services",
+      "description": "Explore the range of services we offer"
     }
   },
   "ContactPage": {
