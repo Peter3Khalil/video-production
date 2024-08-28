@@ -26,6 +26,21 @@ export async function generateMetadata({
       template: '%s | ' + t('metadata.title'),
     },
     description: t('metadata.description'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
+    },
+    openGraph: {
+      type: 'website',
+      locale: lang,
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      siteName: t('metadata.title'),
+      title: {
+        default: t('metadata.title'),
+        template: '%s | ' + t('metadata.title'),
+      },
+      description: t('metadata.description'),
+    },
   };
 }
 
