@@ -1,16 +1,7 @@
 {
   "HomePage": {
     "title": "Video Production",
-    "sections": {
-      "header": {
-        "home": "Home",
-        "vision": "Our Vision",
-        "about": "About Us",
-        "services": "Services",
-        "why_choose_us": "Why Choose Us",
-        "contact": "Contact"
-      },
-      "footer": "Dynamic. All Rights Reserved",
+    "content": {
       "hero": {
         "title": "Inspire - Initiate - Dream",
         "description": "We are committed to providing value to our customers and partners, through quality service, innovative solutions, and close cooperation with our customers"
@@ -19,80 +10,7 @@
         "title": "Our Projects",
         "description": "Check out some of our recent projects."
       },
-      "about": {
-        "title": "About Us ?",
-        "description": "Over a decade of work based on quality and a passion for success, Dynamic Foundation was able to make a mark for itself as a house for audio-visual production in the region in general, and in particular, in which it cooperated with the strongest governmental and private brands and created a Saudi team of the highest level of professionalism."
-      },
-      "why_choose_us": {
-        "title": "Why Choose Us ?",
-        "description": "We are a team of professionals who are dedicated to providing you with the best service and support.",
-        "reasons": {
-          "24_7_services": {
-            "title": "24/7 Service",
-            "description": "We're available 24/7 to provide you with the best service and support."
-          },
-          "80_years_experience": {
-            "title": "80+ Years of Experience",
-            "description": "We have over 80 years of experience in the industry."
-          },
-          "90_percent_national_cadres": {
-            "title": "90% National Cadres",
-            "description": "We have over 90% of national cadres in our team."
-          },
-          "100_modern_equipment": {
-            "title": "100+ Modern Equipment",
-            "description": "We have over 100 modern equipment to provide you with the best service."
-          },
-          "70_employees": {
-            "title": "70+ Employees",
-            "description": "We have over 70 employees to provide you with the best service."
-          },
-          "50_partners": {
-            "title": "50+ Partners",
-            "description": "We have over 50 partners to provide you with the best service."
-          }
-        }
-      },
-      "services": {
-        "title": "Our Services",
-        "description": "Explore the range of services we offer",
-        "services": {
-          "photography": {
-            "title": "Photography",
-            "description": "We provide professional photography services for all occasions.",
-            "details": {
-              "commercial_photography": "Commercial Photography",
-              "photography_documentary": "Photography and Documentary Coverage",
-              "locations_aerial": "Locations and Aerial Photography"
-            }
-          },
-          "advertising_campaigns": {
-            "title": "Advertising Campaigns",
-            "description": "We help you create and run advertising campaigns to reach your target audience.",
-            "details": {
-              "building_strategies": "Building Strategies",
-              "business_marketing_plan": "Business & Marketing Plan",
-              "production_implementation": "Production and Implementation"
-            }
-          },
-          "event_management": {
-            "title": "Event Management",
-            "description": "We provide event management services for all types of events.",
-            "details": {
-              "music_concerts": "Music Concerts",
-              "creating_ideas_plants": "Creating Ideas for Plants",
-              "festivals_heritage": "Festivals & Popular Heritage"
-            }
-          }
-        }
-      },
-      "contact": {
-        "title": "Let's Starting Build Your Vision",
-        "description": "Get in touch with us to learn more about our services and how we can help you achieve your goals.",
-        "email": "Email Us",
-        "phone": "Call Us"
-      },
-      "customers": {
+      "clients": {
         "title": "Our Clients",
         "description": "We have worked with some of the biggest brands in the industry."
       }
@@ -133,5 +51,89 @@
       "title": "Our Vision",
       "description": "Our vision is to be a globally reputable company, characterized by innovation and excellence in our field, actively contributing to industry development and achieving progress and sustainability in the communities we serve."
     }
+  },
+  "AboutPage": {
+    "title": "About Us ?",
+    "description": "Over a decade of work based on quality and a passion for success, Dynamic Foundation was able to make a mark for itself as a house for audio-visual production in the region in general, and in particular, in which it cooperated with the strongest governmental and private brands and created a Saudi team of the highest level of professionalism."
+  },
+  "WhyChooseUsPage": {
+    "title": "Why Choose Us ?",
+    "description": "We are a team of professionals who are dedicated to providing you with the best service and support.",
+    "reasons": {
+      "24_7_services": {
+        "title": "24/7 Service",
+        "description": "We're available 24/7 to provide you with the best service and support."
+      },
+      "80_years_experience": {
+        "title": "80+ Years of Experience",
+        "description": "We have over 80 years of experience in the industry."
+      },
+      "90_percent_national_cadres": {
+        "title": "90% National Cadres",
+        "description": "We have over 90% of national cadres in our team."
+      },
+      "100_modern_equipment": {
+        "title": "100+ Modern Equipment",
+        "description": "We have over 100 modern equipment to provide you with the best service."
+      },
+      "70_employees": {
+        "title": "70+ Employees",
+        "description": "We have over 70 employees to provide you with the best service."
+      },
+      "50_partners": {
+        "title": "50+ Partners",
+        "description": "We have over 50 partners to provide you with the best service."
+      }
+    }
+  },
+  "ServicesPage": {
+    "title": "Our Services",
+    "description": "Explore the range of services we offer",
+    "services": {
+      "photography": {
+        "title": "Photography",
+        "description": "We provide professional photography services for all occasions.",
+        "details": {
+          "commercial_photography": "Commercial Photography",
+          "photography_documentary": "Photography and Documentary Coverage",
+          "locations_aerial": "Locations and Aerial Photography"
+        }
+      },
+      "advertising_campaigns": {
+        "title": "Advertising Campaigns",
+        "description": "We help you create and run advertising campaigns to reach your target audience.",
+        "details": {
+          "building_strategies": "Building Strategies",
+          "business_marketing_plan": "Business & Marketing Plan",
+          "production_implementation": "Production and Implementation"
+        }
+      },
+      "event_management": {
+        "title": "Event Management",
+        "description": "We provide event management services for all types of events.",
+        "details": {
+          "music_concerts": "Music Concerts",
+          "creating_ideas_plants": "Creating Ideas for Plants",
+          "festivals_heritage": "Festivals & Popular Heritage"
+        }
+      }
+    }
+  },
+  "ContactPage": {
+    "title": "Let's Starting Build Your Vision",
+    "description": "Get in touch with us to learn more about our services and how we can help you achieve your goals.",
+    "email": "Email Us",
+    "phone": "Call Us"
+  },
+  "shared": {
+    "header": {
+      "home": "Home",
+      "vision": "Our Vision",
+      "about": "About Us",
+      "services": "Services",
+      "why_choose_us": "Why Choose Us",
+      "contact": "Contact"
+    },
+    "footer": "Dynamic. All Rights Reserved"
   }
 }

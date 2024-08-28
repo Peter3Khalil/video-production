@@ -56,7 +56,7 @@ const projects: { title: string; url: string }[] = [
 const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
-  const t = useTranslations('HomePage.sections.projects');
+  const t = useTranslations('HomePage.content.projects');
 
   return (
     <Section {...props}>

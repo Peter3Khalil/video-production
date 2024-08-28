@@ -7,7 +7,7 @@ import React from 'react';
 const Footer = () => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
-  const t = useTranslations('HomePage.sections');
+  const t = useTranslations('shared');
   const links = [
     {
       title: 'YouTube',

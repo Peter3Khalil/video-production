@@ -13,7 +13,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
 }) => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
-  const t = useTranslations('HomePage.sections.header');
+  const t = useTranslations('shared.header');
   const items = NAVIGATION_LINKS.map((link) => ({
     ...link,
     href: link.title === 'home' ? '/' + lang : '/' + lang + link.href,

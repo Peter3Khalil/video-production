@@ -13,17 +13,17 @@ import React, { FC } from 'react';
 const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
-  const t = useTranslations('HomePage.sections.hero');
+  const t = useTranslations('HomePage.content.hero');
   return (
     <Section
       {...props}
       className="relative flex h-[40vh] flex-col items-center justify-center px-12 text-center md:h-[80vh]"
     >
       <SectionHeader>
-        <h1 className="text-nowrap text-xl font-bold leading-none md:text-5xl">
+        <h1 className="text-nowrap text-xl font-bold leading-none text-background dark:text-foreground md:text-5xl">
           {t('title')}
         </h1>
-        <SectionDescription className="text-xs text-accent-foreground/80">
+        <SectionDescription className="text-xs text-accent/80 dark:text-accent-foreground/80">
           {t('description')}
         </SectionDescription>
       </SectionHeader>

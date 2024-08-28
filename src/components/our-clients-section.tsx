@@ -16,7 +16,7 @@ import React, { FC } from 'react';
 const OurClientsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
-  const t = useTranslations('HomePage.sections.customers');
+  const t = useTranslations('HomePage.content.clients');
   const images = Array.from({ length: 13 }).map(
     (_, i) => `/customers/${i + 1}.jpeg`,
   );
