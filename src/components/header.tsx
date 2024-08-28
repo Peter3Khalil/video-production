@@ -58,7 +58,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
       )}
       {...props}
     >
-      <nav className="w-full">
+      <section className="w-full">
         <DesktopMenu
           lang={lang}
           pages={pages.map((page) => ({ ...page, title: t(page.title) }))}
@@ -69,7 +69,7 @@ const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ({
           pages={pages.map((page) => ({ ...page, title: t(page.title) }))}
           pathname={pathname}
         />
-      </nav>
+      </section>
     </header>
   );
 };
@@ -131,7 +131,7 @@ const MobileMenu: FC<MenuProps> = ({ lang, pages, pathname = '/' }) => {
 
 const DesktopMenu: FC<MenuProps> = ({ lang, pages, pathname = '/' }) => {
   return (
-    <div className="hidden w-full items-center justify-between md:flex">
+    <nav className="hidden w-full items-center justify-between md:flex">
       <div className="flex items-center gap-12">
         <Link href={`/${lang}`} className="hidden md:block">
           <Logo />
@@ -163,7 +163,7 @@ const DesktopMenu: FC<MenuProps> = ({ lang, pages, pathname = '/' }) => {
           <span>{lang === 'en' ? 'العربية' : 'English'}</span>
         </Link>
       </div>
-    </div>
+    </nav>
   );
 };
 
