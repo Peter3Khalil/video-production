@@ -25,7 +25,7 @@ export async function generateMetadata({
   };
 }
 
-const VisionPage = () => {
+const Vision = () => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
   const t = useTranslations('VisionPage');
@@ -57,4 +57,4 @@ const VisionPage = () => {
   );
 };
 
-export default withSplashScreen(VisionPage);
+export default withSplashScreen(Vision);
