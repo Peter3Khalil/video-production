@@ -1,16 +1,17 @@
 import {
-    Section,
-    SectionContent,
-    SectionDescription,
-    SectionHeader,
-    SectionTitle,
+  Section,
+  SectionContent,
+  SectionDescription,
+  SectionHeader,
+  SectionTitle,
 } from '@/components/layouts/section';
+import WordPullUp from '@/components/magicui/word-pull-up';
 import {
-    ChartIcon,
-    EquipmentIcon,
-    HeartIcon,
-    PeopleIcon,
-    WorkIcon,
+  ChartIcon,
+  EquipmentIcon,
+  HeartIcon,
+  PeopleIcon,
+  WorkIcon,
 } from '@/components/shared/icons';
 import { Clock } from 'lucide-react';
 import { Metadata } from 'next';
@@ -73,13 +74,14 @@ const WhyChooseUs = ({ params: { lang } }: { params: { lang: string } }) => {
           <div
             key={i}
             className="flex flex-col items-center gap-2 rounded-lg bg-accent px-4 py-10 text-center"
+            // delay={0.1 * i}
           >
             <Icon size={40} />
             <h3 className="text-xl font-bold">
-              <span className="mx-1">{t(`content.${key}.title`)}</span>
+              <WordPullUp words={t(`content.${key}.title`)} />
             </h3>
             <p className="px-4 text-muted-foreground">
-              {t(`content.${key}.description`)}
+              <WordPullUp words={t(`content.${key}.description`)} />
             </p>
           </div>
         ))}
