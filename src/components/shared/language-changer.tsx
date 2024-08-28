@@ -24,7 +24,7 @@ const LanguageChanger: FC<LanguageChangerProps> = ({
       {...props}
     >
       <GlobeIcon size={24} />
-      <span>{lang === 'en' ? 'العربية' : 'English'}</span>
+      <span>{lang === 'en' ? 'ع' : 'En'}</span>
     </Link>
   );
 };
