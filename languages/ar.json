@@ -4,8 +4,11 @@
     "sections": {
       "header": {
         "home": "الرئيسية",
-        "projects": "المشاريع",
-        "our_clients": "عملاؤنا"
+        "vision": "رؤيتنا",
+        "about": "من نحن",
+        "services": "خدماتنا",
+        "why_choose_us": "لماذا تختارنا",
+        "contact": "تواصل معنا"
       },
       "footer": "ديناميك. جميع الحقوق محفوظة",
       "hero": {

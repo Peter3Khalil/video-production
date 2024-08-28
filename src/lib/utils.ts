@@ -17,9 +17,13 @@ export const getDirection = (language: string): 'rtl' | 'ltr' => {
 };
 
 export const getLangFromHeaders = (headers: () => ReadonlyHeaders) => {
+  const lang = getPathnameFromHeaders(headers).split('/')[1];
+  return lang;
+};
+
+export const getPathnameFromHeaders = (headers: () => ReadonlyHeaders) => {
   const headersList = headers();
   const currentUrl = headersList.get('x-url') || '';
   const url = new URL(currentUrl);
-  const lang = url.pathname.split('/')[1];
-  return lang;
+  return url.pathname;
 };

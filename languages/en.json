@@ -4,8 +4,11 @@
     "sections": {
       "header": {
         "home": "Home",
-        "projects": "Projects",
-        "our_clients": "Our Clients"
+        "vision": "Our Vision",
+        "about": "About Us",
+        "services": "Services",
+        "why_choose_us": "Why Choose Us",
+        "contact": "Contact"
       },
       "footer": "Dynamic. All Rights Reserved",
       "hero": {
