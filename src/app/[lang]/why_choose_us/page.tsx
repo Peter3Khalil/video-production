@@ -6,6 +6,7 @@ import {
   SectionTitle,
 } from '@/components/layouts/section';
 import WordPullUp from '@/components/magicui/word-pull-up';
+import Reveal from '@/components/reveal';
 import {
   ChartIcon,
   EquipmentIcon,
@@ -71,10 +72,10 @@ const WhyChooseUs = ({ params: { lang } }: { params: { lang: string } }) => {
       </SectionHeader>
       <SectionContent className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-4">
         {content.map(({ key, icon: Icon }, i) => (
-          <div
+          <Reveal
             key={i}
             className="flex flex-col items-center gap-2 rounded-lg bg-accent px-4 py-10 text-center"
-            // delay={0.1 * i}
+            delay={0}
           >
             <Icon size={40} />
             <h3 className="text-xl font-bold">
@@ -83,7 +84,7 @@ const WhyChooseUs = ({ params: { lang } }: { params: { lang: string } }) => {
             <p className="px-4 text-muted-foreground">
               <WordPullUp words={t(`content.${key}.description`)} />
             </p>
-          </div>
+          </Reveal>
         ))}
       </SectionContent>
     </Section>
