@@ -6,11 +6,9 @@ import {
   SectionHeader,
   SectionTitle,
 } from '@/components/layouts/section';
-import { getLangFromHeaders } from '@/lib/utils';
 import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { headers } from 'next/headers';
 
 export async function generateMetadata({
   params: { lang },
@@ -25,8 +23,7 @@ export async function generateMetadata({
   };
 }
 
-const Vision = () => {
-  const lang = getLangFromHeaders(headers);
+const Vision = ({ params: { lang } }: { params: { lang: string } }) => {
   unstable_setRequestLocale(lang);
   const t = useTranslations('VisionPage');
   const visions = Array.from({ length: 6 }).map((_, i) => ({
