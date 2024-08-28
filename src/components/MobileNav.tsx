@@ -1,5 +1,6 @@
 'use client';
-import { GlobeIcon, MenuIcon } from '@/components/shared/icons';
+import { MenuIcon } from '@/components/shared/icons';
+import LanguageChanger from '@/components/shared/language-changer';
 import Logo from '@/components/shared/logo';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import useMediaQuery from '@/hooks/useMediaQuery';
@@ -16,6 +17,7 @@ type MenuProps = React.HTMLAttributes<HTMLDivElement> & {
 const MobileNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const currentPage = pathname.split(lang)[1];
   const { isMatched: isMobile } = useMediaQuery({ maxWidth: 768 });
   if (!isMobile) return null;
   return (
@@ -62,16 +64,7 @@ const MobileNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
           </SheetContent>
         </Sheet>
       </div>
-      <div className="flex items-center gap-6">
-        <Link
-          href={`/${lang === 'en' ? 'ar' : 'en'}`}
-          className="flex items-center gap-2"
-          dir={lang === 'en' ? 'rtl' : 'ltr'}
-        >
-          <GlobeIcon size={24} />
-          <span>{lang === 'en' ? 'العربية' : 'English'}</span>
-        </Link>
-      </div>
+      <LanguageChanger lang={lang} currentPage={currentPage} />
     </div>
   );
 };

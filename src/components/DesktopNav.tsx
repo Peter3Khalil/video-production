@@ -1,5 +1,5 @@
 'use client';
-import { GlobeIcon } from '@/components/shared/icons';
+import LanguageChanger from '@/components/shared/language-changer';
 import Logo from '@/components/shared/logo';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
@@ -14,6 +14,7 @@ type MenuProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const DesktopNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
   const pathname = usePathname();
+  const currentPage = pathname.split(lang)[1];
   const { isMatched: isLargeScreen } = useMediaQuery({ minWidth: 768 });
   if (!isLargeScreen) return null;
   return (
@@ -45,16 +46,7 @@ const DesktopNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
         </ul>
       </div>
 
-      <div className="flex items-center gap-6">
-        <Link
-          href={`/${lang === 'en' ? 'ar' : 'en'}`}
-          className="flex items-center gap-2"
-          dir={lang === 'en' ? 'rtl' : 'ltr'}
-        >
-          <GlobeIcon size={24} />
-          <span>{lang === 'en' ? 'العربية' : 'English'}</span>
-        </Link>
-      </div>
+      <LanguageChanger lang={lang} currentPage={currentPage} />
     </nav>
   );
 };
