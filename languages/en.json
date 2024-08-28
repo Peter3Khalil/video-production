@@ -19,36 +19,6 @@
         "title": "Our Projects",
         "description": "Check out some of our recent projects."
       },
-      "vision": {
-        "title": "Our Vision",
-        "description": "Our vision is to be a reputable company with a global reputation, distinguished by innovation and excellence in our field, and actively contributing to the development of the industry and achieving progress and sustainability in the communities we serve.",
-        "details": [
-          {
-            "subtitle": "Providing Value",
-            "content": "We seek to provide innovative, high-quality solutions and services that add real value to our customers and effectively meet their needs."
-          },
-          {
-            "subtitle": "Sustainability",
-            "content": "We are committed to social and environmental responsibility, and are working to develop our practices to be more sustainable and have a positive impact on the environment."
-          },
-          {
-            "subtitle": "Innovation And Development",
-            "content": "We strive for continuous innovation and development. We support new ideas and work to develop our technologies and processes to achieve excellence and continuous innovation."
-          },
-          {
-            "subtitle": "Building Strong Relationships",
-            "content": "We seek to build lasting and strong relationships with our customers and partners, built on trust, mutual respect, and close cooperation."
-          },
-          {
-            "subtitle": "Sustainable Growth",
-            "content": "We aspire to sustainable growth and expansion into new markets, while maintaining quality service and positive interaction with society."
-          },
-          {
-            "subtitle": "Professionalism",
-            "content": "We are committed to the highest standards of professionalism and ethics in all our dealings, and we strive to provide the best service to our customers."
-          }
-        ]
-      },
       "about": {
         "title": "About Us ?",
         "description": "Over a decade of work based on quality and a passion for success, Dynamic Foundation was able to make a mark for itself as a house for audio-visual production in the region in general, and in particular, in which it cooperated with the strongest governmental and private brands and created a Saudi team of the highest level of professionalism."
@@ -126,10 +96,42 @@
         "title": "Our Clients",
         "description": "We have worked with some of the biggest brands in the industry."
       }
+    },
+    "metadata": {
+      "title": "Dynamic Media Production",
+      "description": "Over a decade of work based on quality and a passion for success, Dynamic Foundation was able to make a mark for itself as a house for audio-visual production in the region in general, and in particular, in which it cooperated with the strongest governmental and private brands and created a Saudi team of the highest level of professionalism."
     }
   },
-  "Metadata": {
-    "title": "Dynamic Media Production",
-    "description": "Over a decade of work based on quality and a passion for success, Dynamic Foundation was able to make a mark for itself as a house for audio-visual production in the region in general, and in particular, in which it cooperated with the strongest governmental and private brands and created a Saudi team of the highest level of professionalism."
+  "VisionPage": {
+    "content": [
+      {
+        "subtitle": "Providing Value",
+        "content": "We seek to provide innovative, high-quality solutions and services that add real value to our customers and effectively meet their needs."
+      },
+      {
+        "subtitle": "Sustainability",
+        "content": "We are committed to social and environmental responsibility, and are working to develop our practices to be more sustainable and have a positive impact on the environment."
+      },
+      {
+        "subtitle": "Innovation And Development",
+        "content": "We strive for continuous innovation and development. We support new ideas and work to develop our technologies and processes to achieve excellence and continuous innovation."
+      },
+      {
+        "subtitle": "Building Strong Relationships",
+        "content": "We seek to build lasting and strong relationships with our customers and partners, built on trust, mutual respect, and close cooperation."
+      },
+      {
+        "subtitle": "Sustainable Growth",
+        "content": "We aspire to sustainable growth and expansion into new markets, while maintaining quality service and positive interaction with society."
+      },
+      {
+        "subtitle": "Professionalism",
+        "content": "We are committed to the highest standards of professionalism and ethics in all our dealings, and we strive to provide the best service to our customers."
+      }
+    ],
+    "metadata": {
+      "title": "Our Vision",
+      "description": "Our vision is to be a globally reputable company, characterized by innovation and excellence in our field, actively contributing to industry development and achieving progress and sustainability in the communities we serve."
+    }
   }
 }

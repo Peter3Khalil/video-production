@@ -7,23 +7,37 @@ import {
   SectionTitle,
 } from '@/components/layouts/section';
 import { getLangFromHeaders } from '@/lib/utils';
+import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { headers } from 'next/headers';
+
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({ locale: lang, namespace: 'VisionPage' });
+
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+  };
+}
 
 const VisionPage = () => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
-  const t = useTranslations('HomePage.sections.vision');
+  const t = useTranslations('VisionPage');
   const visions = Array.from({ length: 6 }).map((_, i) => ({
-    subtitle: t(`details.${i}.subtitle`),
-    content: t(`details.${i}.content`),
+    subtitle: t(`content.${i}.subtitle`),
+    content: t(`content.${i}.content`),
   }));
   return (
     <Section>
       <SectionHeader className="max-w-xl md:max-w-xl">
-        <SectionTitle>{t('title')}</SectionTitle>
-        <SectionDescription>{t('description')}</SectionDescription>
+        <SectionTitle>{t('metadata.title')}</SectionTitle>
+        <SectionDescription>{t('metadata.description')}</SectionDescription>
       </SectionHeader>
       <SectionContent className="mt-12 max-w-xl gap-20 p-0">
         <ul className="space-y-8">

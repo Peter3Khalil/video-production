@@ -18,11 +18,14 @@ export async function generateMetadata({
 }: {
   params: { lang: string };
 }): Promise<Metadata> {
-  const t = await getTranslations({ locale: lang, namespace: 'Metadata' });
+  const t = await getTranslations({ locale: lang, namespace: 'HomePage' });
 
   return {
-    title: t('title'),
-    description: t('description'),
+    title: {
+      default: t('metadata.title'),
+      template: '%s | ' + t('metadata.title'),
+    },
+    description: t('metadata.description'),
   };
 }
 
