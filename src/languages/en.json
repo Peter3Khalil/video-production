@@ -130,21 +130,20 @@
       "description": "Explore the range of services we offer"
     }
   },
-  "ContactPage": {
-    "title": "Let's Starting Build Your Vision",
-    "description": "Get in touch with us to learn more about our services and how we can help you achieve your goals.",
-    "email": "Email Us",
-    "phone": "Call Us"
-  },
   "shared": {
     "header": {
       "home": "Home",
       "vision": "Our Vision",
       "about": "About Us",
       "services": "Services",
-      "why_choose_us": "Why Choose Us",
-      "contact": "Contact"
+      "why_choose_us": "Why Choose Us"
     },
-    "footer": "Dynamic. All Rights Reserved"
+    "footer": "Dynamic. All Rights Reserved",
+    "contact": {
+      "title": "Let's Starting Build Your Vision",
+      "description": "Get in touch with us to learn more about our services and how we can help you achieve your goals.",
+      "email": "Email Us",
+      "phone": "Call Us"
+    }
   }
 }

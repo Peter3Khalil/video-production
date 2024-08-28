@@ -1,3 +1,4 @@
+import Contact from '@/components/contact';
 import { getLangFromHeaders } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
@@ -29,6 +30,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t py-6 text-center">
+      <Contact />
       <ul className="inline-flex flex-col gap-2 text-muted-foreground sm:flex-row sm:gap-4">
         {links.map((link) => (
           <li

@@ -28,8 +28,4 @@ export const NAVIGATION_LINKS = [
     title: 'services',
     href: '/services',
   },
-  {
-    title: 'contact',
-    href: '/contact',
-  },
 ];

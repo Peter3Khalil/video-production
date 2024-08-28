@@ -1,6 +1,7 @@
 'use client';
 import LanguageChanger from '@/components/shared/language-changer';
 import Logo from '@/components/shared/logo';
+import { Button } from '@/components/ui/button';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -45,8 +46,14 @@ const DesktopNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
           ))}
         </ul>
       </div>
-
-      <LanguageChanger lang={lang} currentPage={currentPage} />
+      <div className="flex items-center gap-4">
+        <Button className="text-xs font-bold" asChild>
+          <Link href={`#contact`}>
+            {lang === 'ar' ? 'تواصل معنا' : 'Contact Us'}
+          </Link>
+        </Button>
+        <LanguageChanger lang={lang} currentPage={currentPage} />
+      </div>
     </nav>
   );
 };

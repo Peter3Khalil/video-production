@@ -16,10 +16,10 @@ import { headers } from 'next/headers';
 const Contact: FC<React.ComponentProps<typeof Section>> = (props) => {
   const lang = getLangFromHeaders(headers);
   unstable_setRequestLocale(lang);
-  const t = useTranslations('HomePage.sections.contact');
+  const t = useTranslations('shared.contact');
 
   return (
-    <Section {...props}>
+    <Section id="contact" {...props}>
       <SectionHeader className="mx-auto md:max-w-sm">
         <SectionTitle className="px-12 md:text-nowrap">
           {t('title')}

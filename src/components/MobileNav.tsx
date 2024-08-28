@@ -1,7 +1,8 @@
 'use client';
-import { MenuIcon } from '@/components/shared/icons';
+import { MenuIcon, PhoneIcon } from '@/components/shared/icons';
 import LanguageChanger from '@/components/shared/language-changer';
 import Logo from '@/components/shared/logo';
+import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { cn, getDirection } from '@/lib/utils';
@@ -64,7 +65,14 @@ const MobileNav: FC<MenuProps> = ({ lang, items, className, ...props }) => {
           </SheetContent>
         </Sheet>
       </div>
-      <LanguageChanger lang={lang} currentPage={currentPage} />
+      <div className="flex items-center gap-4">
+        <Button className="text-xs font-bold" asChild>
+          <Link href={`#contact`}>
+            <PhoneIcon size={20} className="shrink-0" />
+          </Link>
+        </Button>
+        <LanguageChanger lang={lang} currentPage={currentPage} />
+      </div>
     </div>
   );
 };
