@@ -23,7 +23,7 @@ const SplashScreen = () => {
         playsInline
         className="h-full w-full object-contain md:object-cover"
       >
-        <source src="/splash-video.mp4" type="video/mp4" />
+        <source src="/assets/splash-video.mp4" type="video/mp4" />
       </video>
     </div>
   );

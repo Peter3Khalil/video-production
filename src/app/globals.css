@@ -71,7 +71,7 @@
 
 @font-face {
   font-family: 'ONE_DAY';
-  src: url('../../public/font/ONEDAY.otf') format('opentype');
+  src: url('../../public/assets/font/ONEDAY.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

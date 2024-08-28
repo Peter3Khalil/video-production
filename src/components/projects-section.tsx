@@ -71,7 +71,7 @@ const ProjectsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
               <DialogTrigger className="size-full">
                 <BlurFade key={title} delay={0.25 + idx * 0.05} inView>
                   <Image
-                    src={`/thumbnails/${title}.webp`}
+                    src={`/assets/images/thumbnails/${title}.webp`}
                     sizes="100vw"
                     width={500}
                     height={500}

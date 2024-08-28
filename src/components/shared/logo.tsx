@@ -10,7 +10,7 @@ type LogoProps = {
 };
 
 const Logo: FC<LogoProps> = ({
-  src = '/logo.png',
+  src = '/assets/images/logo.png',
   alt = 'Logo',
   width = 150,
   height = 150,

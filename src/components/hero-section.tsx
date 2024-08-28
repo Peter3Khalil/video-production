@@ -29,7 +29,7 @@ const HeroSection: FC<React.ComponentProps<typeof Section>> = (props) => {
       </SectionHeader>
       <div className="hero-image absolute -z-10 h-full w-full lg:w-[80%]">
         <Image
-          src="/hero.webp"
+          src="/assets/images/hero.webp"
           fill
           loading="eager"
           alt="Hero Image"

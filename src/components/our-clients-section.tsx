@@ -32,7 +32,7 @@ const OurClientsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         <Marquee className="[--duration:20s]">
           {firstRow.map((_, i) => (
             <Image
-              src={`/clients/${i + 1}.jpeg`}
+              src={`/assets/images/clients/${i + 1}.jpeg`}
               alt={`Client ${i + 1}`}
               sizes="100vw"
               width={500}
@@ -45,7 +45,7 @@ const OurClientsSection: FC<React.ComponentProps<typeof Section>> = (props) => {
         <Marquee reverse className="[--duration:20s]">
           {secondRow.map((_, i) => (
             <Image
-              src={`/clients/${i + 8}.jpeg`}
+              src={`/assets/images/clients/${i + 8}.jpeg`}
               alt={`Client ${i + 8}`}
               sizes="100vw"
               width={500}
