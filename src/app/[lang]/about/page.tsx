@@ -1,3 +1,4 @@
+import withSplashScreen from '@/components/HOC/withSplashScreen';
 import {
   Section,
   SectionContent,
@@ -28,7 +29,7 @@ const About = ({ params: { lang } }: { params: { lang: string } }) => {
     <>
       <Section className="relative flex h-[40vh] flex-col items-center justify-center px-12 text-center md:h-[80vh]">
         <SectionHeader>
-          <h1 className="text-nowrap tracking-widest text-2xl font-bold leading-none text-background dark:text-foreground md:text-5xl">
+          <h1 className="text-nowrap text-2xl font-bold leading-none tracking-widest text-background dark:text-foreground md:text-5xl">
             {t('metadata.title')}
           </h1>
         </SectionHeader>
@@ -53,4 +54,4 @@ const About = ({ params: { lang } }: { params: { lang: string } }) => {
   );
 };
 
-export default About;
+export default withSplashScreen(About);
